@@ -1,3 +1,6 @@
+import ThemeToggle from "./theme-toggle";
+import HalftoneImage from "./halftone-image";
+
 const nav = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
@@ -11,7 +14,7 @@ const projects = [
     title: "Array Rotation Visualizer",
     period: "2026",
     status: "Practice",
-    stack: ["C++", "Data Structures", "CLI"],
+    stack: ["C++", "Dataå Structures", "CLI"],
     summary:
       "A command-line tool that steps through rotation algorithms one move at a time, built from self-directed DSA practice outside of coursework.",
   },

@@ -12,6 +12,18 @@
   --amber-dim: #7a5a24;
 }
 
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f7f7f5;
+  --surface-hover: #efefec;
+  --border: #e2e2de;
+  --text: #141414;
+  --text-soft: #4a4a46;
+  --text-muted: #8a8a84;
+  --amber: #b8790f;
+  --amber-dim: #e8c88a;
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -35,6 +47,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 @media (prefers-reduced-motion: no-preference) {
