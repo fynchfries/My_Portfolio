@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #131313;
+  --surface-hover: #181818;
+  --border: #262626;
+  --text: #ededed;
+  --text-soft: #a3a3a3;
+  --text-muted: #6b6b6b;
+  --amber: #f2a93b;
+  --amber-dim: #7a5a24;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-soft: var(--text-soft);
+  --color-text-muted: var(--text-muted);
+  --color-amber: var(--amber);
+  --color-amber-dim: var(--amber-dim);
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: reveal 0.5s ease forwards;
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glow-dot {
+  box-shadow: 0 0 0 3px rgba(242, 169, 59, 0.15);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--amber);
+  color: #0a0a0a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
