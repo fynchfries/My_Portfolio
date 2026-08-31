@@ -1,47 +1,8 @@
-import ThemeToggle from "./theme-toggle";
-import HalftoneImage from "./halftone-image";
-
 const nav = [
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
   { label: "Stack", href: "#stack" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
-];
-
-const projects = [
-  {
-    title: "Array Rotation Visualizer",
-    period: "2026",
-    status: "Practice",
-    stack: ["C++", "Dataå Structures", "CLI"],
-    summary:
-      "A command-line tool that steps through rotation algorithms one move at a time, built from self-directed DSA practice outside of coursework.",
-  },
-  {
-    title: "Payroll Calculator",
-    period: "2026",
-    status: "Coursework",
-    stack: ["C#", "WinForms", ".NET"],
-    summary:
-      "A desktop app computing overtime, tax brackets, and FICA deductions from timesheet input, with per-field validation and clear error states.",
-  },
-  {
-    title: "SnapTales Shorts Pipeline",
-    period: "2026",
-    status: "Side Project",
-    stack: ["Workflow Design", "Scripting", "Video"],
-    summary:
-      "A repeatable production workflow for short-form animal storytelling videos — raw footage through script, structure, and edit review.",
-  },
-  {
-    title: "Matrix Search Utility",
-    period: "2025",
-    status: "Coursework",
-    stack: ["C++", "File I/O"],
-    summary:
-      "A 2D matrix search program reading records from file input, debugged through a stubborn variable-shadowing bug in the process.",
-  },
 ];
 
 const stack = [
@@ -49,8 +10,6 @@ const stack = [
   "C#",
   ".NET",
   "WinForms",
-  "Data Structures",
-  "Algorithms",
   "Git",
   "VS Code",
 ];
@@ -78,7 +37,7 @@ const experience = [
     term: "2025",
     title: "Presentation — Philippine History",
     detail:
-      "Co-presented \u201cMeaning and Relevance of History,\u201d researching and designing an eleven-slide deck with a co-presenter.",
+      "Co-presented “Meaning and Relevance of History,” researching and designing an eleven-slide deck with a co-presenter.",
   },
 ];
 
@@ -88,12 +47,20 @@ export default function Home() {
       {/* Nav */}
       <header className="sticky top-0 z-20 border-b border-border/80 bg-bg/85 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-          <a href="#top" className="font-[family-name:var(--font-display)] text-sm font-semibold">
+          <a
+            href="#top"
+            className="font-[family-name:var(--font-display)] text-sm font-semibold"
+          >
             Theo Ermino
           </a>
+
           <nav className="hidden gap-6 text-sm text-text-soft sm:flex">
             {nav.map((item) => (
-              <a key={item.href} href={item.href} className="transition hover:text-amber">
+              <a
+                key={item.href}
+                href={item.href}
+                className="transition hover:text-amber"
+              >
                 {item.label}
               </a>
             ))}
@@ -102,30 +69,56 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="mx-auto max-w-3xl px-6 pb-16 pt-16 sm:pt-24">
+      <section
+        id="top"
+        className="mx-auto max-w-3xl px-6 pb-16 pt-16 sm:pt-24"
+      >
         <div className="reveal">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-text-soft">
             <span className="glow-dot h-1.5 w-1.5 rounded-full bg-amber" />
             Currently studying: Data Structures &amp; Algorithms
           </div>
+
           <h1 className="font-[family-name:var(--font-display)] text-4xl font-semibold leading-tight sm:text-5xl">
             Theo Ermino
           </h1>
+
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-text-soft">
-            Computer science student. I build small, working things in C++ and C# while
-            I learn — and I&apos;m most interested in the moment a bug finally makes sense.
+            Computer science student. I build small, working things in C++ and
+            C# while I learn — and I&apos;m most interested in the moment a bug
+            finally makes sense.
           </p>
+
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
-            <a href="#projects" className="rounded-md bg-amber px-4 py-2 font-medium text-bg transition hover:opacity-90">
-              View projects
+            <a
+              href="#about"
+              className="rounded-md bg-amber px-4 py-2 font-medium text-bg transition hover:opacity-90"
+            >
+              About me
             </a>
-            <a href="#contact" className="rounded-md border border-border px-4 py-2 text-text transition hover:border-amber hover:text-amber">
+
+            <a
+              href="#contact"
+              className="rounded-md border border-border px-4 py-2 text-text transition hover:border-amber hover:text-amber"
+            >
               Get in touch
             </a>
           </div>
+
           <div className="mt-10 flex gap-5 font-mono text-xs uppercase tracking-wide text-text-muted">
-            <a href="https://github.com/yourhandle" className="transition hover:text-amber">github ↗</a>
-            <a href="https://linkedin.com/in/yourhandle" className="transition hover:text-amber">linkedin ↗</a>
+            <a
+              href="https://github.com/yourhandle"
+              className="transition hover:text-amber"
+            >
+              github ↗
+            </a>
+
+            <a
+              href="https://linkedin.com/in/yourhandle"
+              className="transition hover:text-amber"
+            >
+              linkedin ↗
+            </a>
           </div>
         </div>
       </section>
@@ -133,50 +126,21 @@ export default function Home() {
       {/* About */}
       <section id="about" className="mx-auto max-w-3xl px-6 py-14">
         <SectionHeading number="01" title="about" />
-        <p className="max-w-xl text-base leading-relaxed text-text-soft">
-          I&apos;m a computer science student who learns best by breaking things and reading
-          the stack trace. Most of my time goes into coursework in C++ and C#, but I keep a
-          running list of side exercises to practice outside of class deadlines. I care more
-          about writing code I can explain line by line than code that just happens to work.
-        </p>
-      </section>
 
-      {/* Projects */}
-      <section id="projects" className="mx-auto max-w-3xl px-6 py-14">
-        <SectionHeading number="02" title="projects" />
-        <div className="space-y-4">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="rounded-lg border border-border bg-surface p-5 transition hover:border-amber-dim hover:bg-surface-hover"
-            >
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="font-[family-name:var(--font-display)] text-lg font-medium">
-                  {project.title}
-                </h3>
-                <span className="font-mono text-xs text-text-muted">
-                  {project.status} · {project.period}
-                </span>
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-text-soft">{project.summary}</p>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-text-soft"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+        <p className="max-w-xl text-base leading-relaxed text-text-soft">
+          I&apos;m a computer science student who learns best by breaking
+          things and reading the stack trace. Most of my time goes into
+          coursework in C++ and C#, but I keep a running list of side
+          exercises to practice outside of class deadlines. I care more about
+          writing code I can explain line by line than code that just happens
+          to work.
+        </p>
       </section>
 
       {/* Stack */}
       <section id="stack" className="mx-auto max-w-3xl px-6 py-14">
-        <SectionHeading number="03" title="stack" />
+        <SectionHeading number="02" title="stack" />
+
         <div className="flex flex-wrap gap-2">
           {stack.map((tech) => (
             <span
@@ -191,21 +155,28 @@ export default function Home() {
 
       {/* Experience */}
       <section id="experience" className="mx-auto max-w-3xl px-6 py-14">
-        <SectionHeading number="04" title="experience" />
+        <SectionHeading number="03" title="experience" />
+
         <div>
           {experience.map((item, i) => (
             <div
               key={item.title}
               className={`grid gap-1 py-5 sm:grid-cols-[110px_1fr] sm:gap-6 ${
-                i !== experience.length - 1 ? "border-b border-border" : ""
+                i !== experience.length - 1
+                  ? "border-b border-border"
+                  : ""
               }`}
             >
               <p className="font-mono text-xs text-amber">{item.term}</p>
+
               <div>
                 <h3 className="font-[family-name:var(--font-display)] text-base font-medium">
                   {item.title}
                 </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-text-soft">{item.detail}</p>
+
+                <p className="mt-1.5 text-sm leading-relaxed text-text-soft">
+                  {item.detail}
+                </p>
               </div>
             </div>
           ))}
@@ -214,12 +185,14 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-3xl px-6 py-14">
-        <SectionHeading number="05" title="contact" />
+        <SectionHeading number="04" title="contact" />
+
         <div className="rounded-lg border border-border bg-surface p-6 sm:p-8">
           <p className="max-w-lg text-base leading-relaxed text-text-soft">
-            Open to internships, small freelance builds, and anyone who wants to talk about
-            data structures at 2am.
+            Open to internships, small freelance builds, and anyone who wants
+            to talk about data structures at 2am.
           </p>
+
           <div className="mt-6 flex flex-wrap gap-3 font-mono text-sm">
             <a
               href="mailto:you@example.com"
@@ -227,12 +200,14 @@ export default function Home() {
             >
               you@example.com
             </a>
+
             <a
               href="https://github.com/yourhandle"
               className="rounded-md border border-border px-4 py-2 text-text transition hover:border-amber hover:text-amber"
             >
               GitHub
             </a>
+
             <a
               href="https://linkedin.com/in/yourhandle"
               className="rounded-md border border-border px-4 py-2 text-text transition hover:border-amber hover:text-amber"
@@ -243,6 +218,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-border px-6 py-8">
         <p className="mx-auto max-w-3xl font-mono text-xs text-text-muted">
           © {new Date().getFullYear()} Theo Ermino — built with Next.js
@@ -252,11 +228,19 @@ export default function Home() {
   );
 }
 
-function SectionHeading({ number, title }: { number: string; title: string }) {
+function SectionHeading({
+  number,
+  title,
+}: {
+  number: string;
+  title: string;
+}) {
   return (
     <div className="mb-6 flex items-baseline gap-3">
       <span className="font-mono text-sm text-amber">{number}</span>
+
       <span className="h-px flex-1 bg-border" />
+
       <h2 className="font-[family-name:var(--font-display)] text-sm font-medium uppercase tracking-widest text-text-soft">
         {title}
       </h2>

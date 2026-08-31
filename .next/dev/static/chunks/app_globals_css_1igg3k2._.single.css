@@ -2,7 +2,6 @@
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
-      --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
@@ -327,10 +326,6 @@
     margin-top: calc(var(--spacing) * 1.5);
   }
 
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
-
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -459,12 +454,6 @@
     gap: calc(var(--spacing) * 6);
   }
 
-  :where(.space-y-4 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-  }
-
   .rounded-full {
     border-radius: 3.40282e38px;
   }
@@ -530,10 +519,6 @@
 
   .bg-surface {
     background-color: var(--surface);
-  }
-
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
   }
 
   .p-6 {
@@ -625,10 +610,6 @@
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
 
-  .text-\[11px\] {
-    font-size: 11px;
-  }
-
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
     line-height: var(--leading-relaxed);
@@ -703,14 +684,6 @@
   @media (hover: hover) {
     .hover\:border-amber:hover {
       border-color: var(--amber);
-    }
-
-    .hover\:border-amber-dim:hover {
-      border-color: var(--amber-dim);
-    }
-
-    .hover\:bg-surface-hover:hover {
-      background-color: var(--surface-hover);
     }
 
     .hover\:text-amber:hover {
@@ -825,12 +798,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 999px;
-}
-
-@property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
 }
 
 @property --tw-border-style {
